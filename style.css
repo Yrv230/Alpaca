@@ -30,8 +30,9 @@ body {
     flex-direction: column;
     justify-content: space-between;
     row-gap: 32px;
-    background: #18A4E0;
     box-shadow: -4px 0px 4px rgba(0, 0, 0, 0.25);
+    background: #18A4E0;
+    animation: slidein 2s ease-in-out;
 }
 
 .menu__header {
@@ -201,9 +202,9 @@ body {
 }
 
 .menu__footer {
-    background: #043353;
     border-radius: 8px 8px 0px 0px;
     padding: 28px 0;
+    background: #043353;
 }
 
 .menu__footer-list {
@@ -212,11 +213,17 @@ body {
     column-gap: 16px;
 }
 
-@media (max-width: 480px) {
-    body {
-        background: none;
+@keyframes slidein {
+    from {
+        transform: translateX(100%);
     }
 
+    to {
+        transform: rotateX(0%);
+    }
+}
+
+@media (max-width: 480px) {
     .menu__wrapper {
         max-width: 100%;
     }
